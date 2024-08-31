@@ -1,3 +1,5 @@
+Slightly updated version of PrettyCoffee's v0.4.3 version of the startup page. Add horizontal scrolling as I struggled to use the page when it was minimized. Removed the search icon logo, the placeholder in the search bar and added some of my own themes. 
+
 ![logo](https://github.com/PrettyCoffee/fluidity/blob/main/public/logo192.png)
 
 # Fluidity - An accordion based startpage
