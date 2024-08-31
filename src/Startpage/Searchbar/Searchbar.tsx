@@ -53,7 +53,7 @@ export const Searchbar = () => {
     const searchSettings = Settings.Search.getWithFallback();
     const engine: string = searchSettings?.engine || "google.com/";
 
-    let searchSymbol = google;
+    let searchSymbol = null;
     if (engine.startsWith("duckduckgo"))
         searchSymbol = duckduckgo;
     else if (engine.startsWith("qwant"))
@@ -70,7 +70,7 @@ export const Searchbar = () => {
 
     return (
         <StyledSearchbarContainer>
-            <SearchIcon src={searchSymbol} />
+            {searchSymbol && <SearchIcon src={searchSymbol} />} 
             <StyledSearchbar
                 placeholder=""
                 type="input"
