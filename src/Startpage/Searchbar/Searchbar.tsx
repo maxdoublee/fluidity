@@ -5,7 +5,7 @@ import * as Settings from "../Settings/settingsHandler";
 import ecosia from "../../data/pictures/ecosia.svg";
 import google from "../../data/pictures/google.svg";
 import duckduckgo from "../../data/pictures/duckduckgo.svg";
-import perplexity from "../../data/pictures/Perplexity.png";
+import perplexity from "../../data/pictures/perplexity.svg";
 import qwant from "../../data/pictures/qwant.svg";
 
 const StyledSearchbarContainer = styled.div`
