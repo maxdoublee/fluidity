@@ -1,363 +1,295 @@
-import pic_1 from "./pictures/pic_1.jpg"
-import pic_2 from "./pictures/pic_2.jpg"
-import pic_3 from "./pictures/pic_3.jpg"
-import pic_4 from "./pictures/pic_4.jpg"
-import pic_5 from "./pictures/pic_5.jpg"
-import pic_6 from "./pictures/pic_6.jpg"
-import pic_7 from "./pictures/pic_7.jpg"
-import pic_8 from "./pictures/pic_8.png"
-import { queryToken } from "../Startpage/Searchbar/Searchbar"
+import pic_1 from "./pictures/pic_1.jpg";
+import pic_2 from "./pictures/pic_2.jpg";
+import pic_3 from "./pictures/pic_3.jpg";
+import pic_4 from "./pictures/pic_4.jpg";
+import pic_5 from "./pictures/pic_5.jpg";
+import pic_6 from "./pictures/pic_6.jpg";
+import pic_7 from "./pictures/pic_7.jpg";
+import pic_8 from "./pictures/pic_8.png";
 
-export interface dataElem {
-  label: string
-  value: string
+export type dataElem = {
+	label: string,
+	value: string,
 }
 
-export interface linkGroup {
-  title: string
-  links: dataElem[]
+export type linkGroup = {
+	title: string;
+	links: dataElem[];
 }
-
-/* eslint-disable */
-/*
-──────▄▌▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀​▀▀▀▀▀▀▌
-───▄▄██▌█ BEEP BEEP
-▄▄▄▌▐██▌█ GAY PORN DELIVERY
-███████▌█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄​▄▄▄▄▄▄▌
-▀(@)▀▀▀▀▀▀▀(@)(@)▀▀▀▀▀▀▀▀▀▀▀▀▀​▀▀▀▀(@)▀
-*/
-/* eslint-enable */
 
 export const links: linkGroup[] = [
-  {
-    title: "Reddit",
-    links: [
-      {
-        label: "r/startpages",
-        value: "https://www.reddit.com/r/startpages/",
-      },
-      {
-        label: "r/unixporn",
-        value: "https://www.reddit.com/r/unixporn/",
-      },
-      {
-        label: "r/rainmeter",
-        value: "https://www.reddit.com/r/rainmeter/",
-      },
-      {
-        label: "r/AnimalsBeingDerps",
-        value: "https://www.reddit.com/r/AnimalsBeingDerps/",
-      },
-    ],
-  },
-  {
-    title: "3D Modelling",
-    links: [
-      {
-        label: "Blender",
-        value: "https://www.blender.org/",
-      },
-      {
-        label: "BlenderGuru",
-        value: "https://www.blenderguru.com/",
-      },
-      {
-        label: "Poliigon",
-        value: "https://www.poliigon.com/",
-      },
-      {
-        label: "Blender tutorial",
-        value:
-          "https://www.youtube.com/watch?v=NyJWoyVx_XI&list=PLjEaoINr3zgEq0u2MzVgAaHEBt--xLB6U",
-      },
-      {
-        label: "The other Blender tutorial",
-        value:
-          "https://www.youtube.com/watch?v=bpvh-9H8S1g&list=PL8eKBkZzqDiU-qcoaghCz04sMitC1yx6k&index=1",
-      },
-    ],
-  },
-  {
-    title: "Design",
-    links: [
-      {
-        label: "PixlrX",
-        value: "https://pixlr.com/x/",
-      },
-      {
-        label: "AI Image Enlarger",
-        value: "https://bigjpg.com/en",
-      },
-      {
-        label: "Img to Svg Converter",
-        value: "https://picsvg.com/",
-      },
-      {
-        label: "Affinity",
-        value: "https://affinity.serif.com/en-us/tutorials/designer/desktop/",
-      },
-      {
-        label: "Affinity - YT",
-        value: "https://www.youtube.com/c/AffinityRevolution/playlists",
-      },
-    ],
-  },
-  {
-    title: "Music",
-    links: [
-      {
-        label: "i wanna be a cowboy",
-        value: "https://www.youtube.com/watch?v=8zWz92f_HGs",
-      },
-      {
-        label: "let the bodies hit the floor",
-        value: "https://www.youtube.com/watch?v=b--VKaCB9u0",
-      },
-      {
-        label: "Nobody Kanna Cross It",
-        value: "https://www.youtube.com/watch?v=2wqTnwJGvtc",
-      },
-      {
-        label: "Smug Dancin",
-        value: "https://www.youtube.com/watch?v=eNZ9Od1jQ4Q",
-      },
-      {
-        label: "Utamaru - The Sanctified Mind Cover",
-        value: "https://www.youtube.com/watch?v=MHlJKLlS07U",
-      },
-    ],
-  },
-  {
-    title: "Sauce",
-    links: [
-      {
-        label: "Pictures - DeathAndMilk",
-        value: "https://www.instagram.com/deathandmilk_/",
-      },
-      {
-        label: "Icons - FontAwesome",
-        value: "https://fontawesome.com/icons",
-      },
-      {
-        label: "Text Flicker - CodeMyUI",
-        value:
-          "https://codemyui.com/crt-screen-text-flicker-animation-in-pure-css/",
-      },
-      {
-        label: "Wave Animation - mburakerman",
-        value: "https://codepen.io/mburakerman/pen/eRZZEv",
-      },
-      {
-        label: "Da real sauce ԅ(♡﹃♡ԅ)",
-        value: "https://www.youtube.com/watch?v=qr89xoZyE1g",
-      },
-      {
-        label: "Even more real sauce ( ͡° ͜ʖ ͡°)",
-        value: "https://www.youtube.com/watch?v=VLhJOd_TFiI",
-      },
-    ],
-  },
+	{
+		title: "PRIMARY",
+		links: [
+			{
+				label: "Bookmarks",
+				value: "https://app.raindrop.io/my/0",
+			},
+			{
+				label: "Drive",
+				value: "https://drive.google.com/drive/my-drive",
+			},
+			{
+				label: "Personal Email",
+				value: "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox",
+			},
+			{
+				label: "SIS",
+				value: "https://sis.rpi.edu/",
+			},
+			{
+				label: "RPI Email",
+				value: "https://outlook.office.com/mail/",
+			},
+			{
+				label: "Current Courses",
+				value: "https://app.raindrop.io/my/27202983",
+			},
+			{
+				label: "School Resources",
+				value: "https://app.raindrop.io/my/24605174",
+			},
+		]
+	},
+	{
+		title: "SECONDARY",
+		links: [
+			{
+				label: "PHD",
+				value: "https://app.raindrop.io/my/43781127",
+			},
+			{
+				label: "Jobs",
+				value: "https://app.raindrop.io/my/36380838",
+			},
+			{
+				label: "Life",
+				value: "https://app.raindrop.io/my/36380719",
+			},
+			{
+				label: "Profolio",
+				value: "https://app.raindrop.io/my/47362448",
+			},
+			{
+				label: "Previous Courses",
+				value: "https://app.raindrop.io/my/24605419",
+			},
+			{
+				label: "Other",
+				value: "https://app.raindrop.io/my/24605403",
+			},
+		]
+	},
 ]
 
 export const images: dataElem[] = [
-  { label: "pic_1", value: pic_1 },
-  { label: "pic_2", value: pic_2 },
-  { label: "pic_3", value: pic_3 },
-  { label: "pic_4", value: pic_4 },
-  { label: "pic_5", value: pic_5 },
-  { label: "pic_6", value: pic_6 },
-  { label: "pic_7", value: pic_7 },
-  { label: "pic_8", value: pic_8 },
-]
+	{ label: "pic_1", value: pic_1 },
+	{ label: "pic_2", value: pic_2 },
+	{ label: "pic_3", value: pic_3 },
+	{ label: "pic_4", value: pic_4 },
+	{ label: "pic_5", value: pic_5 },
+	{ label: "pic_6", value: pic_6 },
+	{ label: "pic_7", value: pic_7 },
+	{ label: "pic_8", value: pic_8 },
+];
 
 export const searchEngines: dataElem[] = [
-  {
-    label: "DuckDuckGo",
-    value: `https://duckduckgo.com/?q=${queryToken}`,
-  },
-  {
-    label: "Google",
-    value: `https://www.google.com/search?q=${queryToken}`,
-  },
-  {
-    label: "Qwant",
-    value: `https://qwant.com/?q=${queryToken}`,
-  },
-  {
-    label: "Ecosia",
-    value: `https://ecosia.org/search/?q=${queryToken}`,
-  },
-]
+	{
+		label: "DuckDuckGo",
+		value: "duckduckgo.com/",
+	},
+	{
+		label: "Google",
+		value: "google.com/search",
+	},
+	{
+		label: "Qwant",
+		value: "qwant.com/",
+	},
+	{
+		label: "Ecosia",
+		value: "ecosia.org/search",
+	},
+	{
+		label: "Perplexity",
+		value: "perplexity.ai/",
+	},
+];
 
-export type FastForwards = Record<string, string>
+export type FastForwards = {
+	[key: string]: string,
+}
 
-export interface Search {
-  engine: string
-  fastForward: FastForwards
+export type Search = {
+	engine: string,
+	fastForward: FastForwards,
 }
 
 export const searchSettings: Search = {
-  engine: searchEngines[0].value,
-  fastForward: {
-    deepl: "https://deepl.com/",
-    maps: "https://google.de/maps/",
-    reddit: "https://reddit.com/",
-    github: "https://github.com/",
-    gitlab: "https://gitlab.com/",
-    youtube: "https://youtube.com/",
-  },
+	engine: searchEngines[4].value,
+	fastForward: {
+		"myflixer": "https://myflixer.to/",
+		"maps": "https://google.de/maps/",
+		"reddit": "https://reddit.com/",
+		"github": "https://github.com/",
+		"y": "https://youtube.com/",
+		"youtube": "https://youtube.com/",
+		"wolfram": "https://www.wolframalpha.com/",
+		"foxsports": "https://www.foxsports.com/",
+		"desmos": "https://www.desmos.com/calculator",
+		"d": "https://www.doordash.com/",
+		"a": "https://www.amazon.com/ref=nav_logo",
+		"walmart": "https://www.walmart.com/",
+		"apple": "https://www.apple.com/",
+		"lms": "https://lms.rpi.edu/?new_loc=%2Fultra%2Fcourses%2F_14279_1%2Fcl%2Foutline",
+		"gradescope": "https://www.gradescope.com/",
+		"lrc": "https://app.raindrop.io/my/27720323",
+		"bestbuy": "https://www.bestbuy.com/",
+		"nsbe": "https://www.nsbe.org/",
+		"eyebuydirect": "https://www.eyebuydirect.com/",
+		"flagrant": "https://app.raindrop.io/my/29325935",
+		"huberman": "https://hubermanlab.com/",
+		"rogan": "https://www.youtube.com/@joerogan",
+		"netflix": "https://www.netflix.com/browse",
+		"adultswim": "https://www.adultswim.com/",
+		"rick and morty": "https://www.adultswim.com/videos/rick-and-morty",
+		"patreon": "https://www.patreon.com/home",
+		"breaking points": "https://www.youtube.com/c/breakingpoints",
+		"news": "https://news.google.com/home?hl=en-US&gl=US&ceid=US:en",
+		"world cup": "https://www.fifa.com/fifaplus/en/home",
+		"weather": "https://www.fifa.com/fifaplus/en/home",
+		"cryto": "https://coinmarketcap.com/",
+		"instagram": "https://www.instagram.com/",
+		"twitter": "https://twitter.com/",
+		"neuralink": "https://neuralink.com/",
+		"elon": "https://app.raindrop.io/my/29326053",
+		"snapchat": "https://web.snapchat.com/",
+		"cashapp": "https://cash.app/account/activity",
+		"sefcu": "https://online.sefcu.com/DashboardV2",
+		"chase": "https://secure06ea.chase.com/web/auth/dashboard#/dashboard/overviewAccounts/overview/multiProduct", 
+		"apple card": "https://card.apple.com/",
+		"amazon card": "https://www.amazon.com/credit/rewardscard/member?ref_=dsk_mpo_bottom_inf_bx_rc",
+		"genius": "https://genius.com/",
+		"meal prep": "https://app.raindrop.io/my/29327058",
+		"gym": "https://app.raindrop.io/my/29327078",
+		"find my": "https://www.icloud.com/find/",
+		"ebay": "https://www.ebay.com/",
+		"uniqlo": "https://www.uniqlo.com/us/en/",
+		"neurosky": "http://neurosky.com/",
+		"litec car": "https://www.ti.com/tool/TIRSLK-EVM#order-start-development",
+		"hbomax": "https://www.hbomax.com/",
+		"lex": "https://www.youtube.com/@lexfridman",
+		"books": "https://app.raindrop.io/my/28535329",
+		"optimum": "https://www.optimum.net/",
+		"rpi reddit": "https://www.reddit.com/r/RPI/",
+		"brain dead": "https://wearebraindead.com/",
+		"digikey": "https://www.digikey.com/",
+		"tech news": "https://www.cnet.com/news//",
+		"chegg": "https://www.chegg.com/",
+		"secretlab": "https://secretlab.co/",
+		"lofi": "https://www.youtube.com/watch?v=IjMESxJdWkg",
+		"loupe": "https://www.loupeart.com/",
+		"gasdrawls": "https://gasdrawls.com/",
+		"target": "https://www.target.com/",
+		"etsy": "https://www.etsy.com/",
+		"thingiverse": "https://www.thingiverse.com/",
+		"peacock": "https://www.peacocktv.com/watch/home",
+		"soundcloud": "https://soundcloud.com/",
+		"barber": "https://app.raindrop.io/my/29328702",
+		"namecheap": "https://www.namecheap.com/",
+		"nintendo": "https://www.nintendo.com/",
+		"g2a": "https://www.g2a.com/",
+		"espn": "https://www.espn.com/",
+		"tnt": "https://www.tntdrama.com/",
+		"gaming news": "https://gamerant.com/gaming/",
+		"phd": "https://app.raindrop.io/my/43781127",
+		"repo": "https://github.com/maxdoublee?tab=repositories",
+	}
 }
 
-export interface colorsType {
-  [key: string]: string
-  "--bg-color": string
-  "--default-color": string
-  "--accent-color": string
-  "--accent-color2": string
+export type colorsType = {
+	[key: string]: string
+	"--bg-color": string,
+	"--default-color": string,
+	"--accent-color": string,
+	"--accent-color2": string,
 }
 
-export interface Theme {
-  name: string
-  colors: colorsType
-  image: string
+export type Theme = {
+	name: string;
+	colors: colorsType;
+	image: string;
 }
 
 export const themes: Theme[] = [
-  {
-    name: "Catppuccin",
-    image:
-      "https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png",
-    colors: {
-      "--bg-color": "#24273A",
-      "--default-color": "#CAD3F5",
-      "--accent-color": "#C6A0F6",
-      "--accent-color2": "#8AADF4",
-    },
-  },
-  {
-    name: "DeathAndMilk",
-    image: pic_1,
-    colors: {
-      "--bg-color": "#2E2E2E",
-      "--default-color": "#E6E6E6",
-      "--accent-color": "#FFB4E6",
-      "--accent-color2": "#B4FFE6",
-    },
-  },
-  {
-    name: "Pop!OS",
-    image:
-      "https://oswallpapers.com/wp-content/uploads/2019/04/kate-hazen-unleash-your-robot.jpg",
-    colors: {
-      "--bg-color": "#333136",
-      "--default-color": "#2BC5EB",
-      "--accent-color": "#FCD307",
-      "--accent-color2": "#2BC5EB",
-    },
-  },
-  {
-    name: "Dark Souls",
-    image:
-      "https://i.pinimg.com/originals/16/74/db/1674dbae45cd38f3d3b4c00dc8616bd7.gif",
-    colors: {
-      "--bg-color": "#32323C",
-      "--default-color": "#A0A08C",
-      "--accent-color": "#9A6650",
-      "--accent-color2": "#461E28",
-    },
-  },
-  {
-    name: "S.E.Lain",
-    image:
-      "https://64.media.tumblr.com/54a945edd2641e20859d6f6537cd7423/tumblr_pwa4bogz4N1qze3hdo2_r1_500.gifv",
-    colors: {
-      "--bg-color": "#0a1a25",
-      "--default-color": "#a6b7ab",
-      "--accent-color": "#94656b",
-      "--accent-color2": "#57182e",
-    },
-  },
-  {
-    name: "Kitties",
-    image:
-      "https://64.media.tumblr.com/5a232d5c0999d02388d78e5c1025f94f/0572516693bf4014-3d/s500x750/0306dc89b657093529aa3ce96e64b9c43572e901.gifv",
-    colors: {
-      "--bg-color": "#495662",
-      "--default-color": "#d1f1fa",
-      "--accent-color": "#80aad4",
-      "--accent-color2": "#e8a9b7",
-    },
-  },
-  {
-    name: "pretty chill",
-    image:
-      "https://e4p7c9i3.stackpathcdn.com/wp-content/uploads/2019/05/tumblr_oymsnbT0111vjxiz1o1_1280.gif?iv=165",
-    colors: {
-      "--bg-color": "#397d76",
-      "--default-color": "#f1daba",
-      "--accent-color": "#c5bdb5",
-      "--accent-color2": "#93a662",
-    },
-  },
-  {
-    name: "Tartarus",
-    image:
-      "https://64.media.tumblr.com/8de9e4d31a132f7617ecc05e6a0f8807/tumblr_nd048m6QFH1tqptlzo1_500.gifv",
-    colors: {
-      "--bg-color": "#282828",
-      "--default-color": "#D4BE98",
-      "--accent-color": "#7DAEA3",
-      "--accent-color2": "#A9B665",
-    },
-  },
-  {
-    name: "Pastel Aesthetic",
-    image: "https://i.imgur.com/bZHurZn.jpeg",
-    colors: {
-      "--bg-color": "#2E2E2E",
-      "--default-color": "#F3C9CB",
-      "--accent-color": "#6D79BF",
-      "--accent-color2": "#FBECEF",
-    },
-  },
-  {
-    name: "Bohemian",
-    image: "https://i.imgur.com/gcZ6fmk.jpeg",
-    colors: {
-      "--bg-color": "#2E2E2E",
-      "--default-color": "#D6B29A",
-      "--accent-color": "#B35000",
-      "--accent-color2": "#FBECEF",
-    },
-  },
-  {
-    name: "Modern Boho",
-    image: "https://i.imgur.com/HkEcwGl.jpeg",
-    colors: {
-      "--bg-color": "#2E2E2E",
-      "--default-color": "#C66B3C",
-      "--accent-color": "#F6BC7C",
-      "--accent-color2": "#54573C",
-    },
-  },
-  {
-    name: "Gruvbox Inspired Green",
-    image: "https://i.imgur.com/ISjs7cg.jpeg",
-    colors: {
-      "--bg-color": "#2E2E2E",
-      "--default-color": "#CC9A52",
-      "--accent-color": "#647D44",
-      "--accent-color2": "#FCE4B4",
-    },
-  },
-  {
-    name: "Beach",
-    image: "https://i.imgur.com/gcW1jul.jpeg",
-    colors: {
-      "--bg-color": "#2E2E2E",
-      "--default-color": "#E3C9BC",
-      "--accent-color": "#91C6CC",
-      "--accent-color2": "#F0F8FA",
-    },
-  },
+	{
+		name: "DOOM",
+		image: "https://f4.bcbits.com/img/a2625942251_65",
+		colors: {
+			"--bg-color": "#272B33",
+			"--default-color": "#D1E589",
+			"--accent-color": "#9A413D",
+			"--accent-color2": "#CECCD7",
+		},
+	},
+	{
+		name: "Pinball",
+		image: "https://media.pitchfork.com/photos/65e8e14d086a529f07f1fd76/master/pass/MIKE-Tony-Seltzer-Pinball.jpg",
+		colors: {
+			"--bg-color": "#FFFFFF",
+			"--default-color": "#000000",
+			"--accent-color": "#404040",
+			"--accent-color2": "#BFBFBF",
+		},
+	},
+	{
+		name: "Burning Desire",
+		image: "https://f4.bcbits.com/img/a2382337335_65",
+		colors: {
+			"--bg-color": "#B70F16",
+			"--default-color": "#E8F3F5",
+			"--accent-color": "#FF8C00",
+			"--accent-color2": "#000000",
+		},
+	},
+	{
+		name: "Disco",
+		image: "https://media.pitchfork.com/photos/60d1efd81302105f8cad0e34/1:1/w_1500,h_1500,c_limit/MIKE:%20Disco!.jpeg",
+		colors: {
+			"--bg-color": "#505054",
+			"--default-color": "#FFFFFF",
+			"--accent-color": "#BEC469",
+			"--accent-color2": "#0D3876",
+		},
+	},
+	{
+		name: "EYES",
+		image: "https://media.pitchfork.com/photos/627bb38d93f71d60359384f1/master/w_1280%2Cc_limit/Danger-Mouse-Black-Thought-Cheat-Codes-2022.jpg",
+		colors: {
+			"--bg-color": "#443C44",
+			"--default-color": "#DCD6C8",
+			"--accent-color": "#D63437",
+			"--accent-color2": "#296643",
+		},
+	},
+	{
+		name: "Shake",
+		image: "https://i.scdn.co/image/ab67616d0000b273a6dd9a81268761d323411303",
+		colors: {
+			"--bg-color": "#0E0D0D",
+			"--default-color": "#FFFFFF",
+			"--accent-color": "#B09982",
+			"--accent-color2": "#664733",
+		},
+	},
+	{
+		name: "Walkin",
+		image: "https://i.scdn.co/image/ab67616d0000b2735b924aa009b61b6b9d831eec",
+		colors: {
+			"--bg-color": "#FC8EAC",
+			"--default-color": "#FFFFFF",
+			"--accent-color": "#52AEAE",
+			"--accent-color2": "#060D56",
+		},
+	}
 ]
