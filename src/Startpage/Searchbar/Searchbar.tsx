@@ -54,7 +54,7 @@ export const Searchbar = () => {
     const searchSettings = Settings.Search.getWithFallback();
     const engine: string = searchSettings?.engine || "google.com/";
 
-    let searchSymbol = google;
+    let searchSymbol = perplexity;
     if (engine.startsWith("duckduckgo"))
         searchSymbol = duckduckgo;
     else if (engine.startsWith("qwant"))
