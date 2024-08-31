@@ -5,6 +5,7 @@ import * as Settings from "../Settings/settingsHandler";
 import ecosia from "../../data/pictures/ecosia.svg";
 import google from "../../data/pictures/google.svg";
 import duckduckgo from "../../data/pictures/duckduckgo.svg";
+import perplexity from "../../data/pictures/perplexity.png";
 import qwant from "../../data/pictures/qwant.svg";
 
 const StyledSearchbarContainer = styled.div`
@@ -17,7 +18,7 @@ const StyledSearchbarContainer = styled.div`
     align-items: flex-start;
     justify-content: center;
     `;
-const StyledSearchbar = styled.input`
+const StyledSearchbar = styled.input`=
     width: 100%;
     font-size: 30pt;
     
@@ -47,13 +48,13 @@ const SearchIcon = styled.div<{ src: string }>`
     
     mask-size: cover;
     mask-image: url(${({ src }) => src});
-`;
+;`
 
 export const Searchbar = () => {
     const searchSettings = Settings.Search.getWithFallback();
     const engine: string = searchSettings?.engine || "google.com/";
 
-    let searchSymbol = google;
+    let searchSymbol = perplexity;
     if (engine.startsWith("duckduckgo"))
         searchSymbol = duckduckgo;
     else if (engine.startsWith("qwant"))
