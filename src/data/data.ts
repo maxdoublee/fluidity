@@ -214,6 +214,8 @@ export const searchSettings: Search = {
 		"live demo": "https://prettycoffee.github.io/fluidity/",
 		"portfolio": "https://app.raindrop.io/my/47362448",
 		"server": "https://app.raindrop.io/my/47362448",
+		"chat": "https://chatgpt.com",
+		"chatgpt": "https://chatgpt.com",
 	}
 }
 
