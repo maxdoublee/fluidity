@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.e897c7bb.css",
-    "main.js": "./static/js/main.567e3a24.js",
+    "main.js": "./static/js/main.e2d36d14.js",
     "static/media/pic_8.png": "./static/media/pic_8.4387a5b982e94311f550.png",
     "static/media/pic_5.jpg": "./static/media/pic_5.5d0bfb2465d8ddd5f0f5.jpg",
     "static/media/pic_7.jpg": "./static/media/pic_7.5125a16fb9841edb115a.jpg",
@@ -12,17 +12,17 @@
     "static/media/pic_4.jpg": "./static/media/pic_4.e0a25b1cb55cf8bdbae1.jpg",
     "static/media/pic_6.jpg": "./static/media/pic_6.64d50c020259c8dec88e.jpg",
     "static/media/pic_3.jpg": "./static/media/pic_3.bb8a25eed5b6fcbb4a40.jpg",
-    "static/media/perplexity.svg": "./static/media/perplexity.7c20352f6b1cea2de068b031a0b5148d.svg",
     "static/media/ecosia.svg": "./static/media/ecosia.684173610b02f20c8a393ebc2fe49a1a.svg",
     "static/media/logo.png": "./static/media/logo.ed388bf3dc802a18f63b.png",
     "static/media/duckduckgo.svg": "./static/media/duckduckgo.ae4e5e007a6260841f7e0374942a4c0c.svg",
     "static/media/qwant.svg": "./static/media/qwant.78b9cec1938f7af2dea0533d0d8aef4b.svg",
+    "static/media/perplexity.svg": "./static/media/perplexity.bf6aa4c4e863ced79c89e75b357b8b12.svg",
     "index.html": "./index.html",
     "main.e897c7bb.css.map": "./static/css/main.e897c7bb.css.map",
-    "main.567e3a24.js.map": "./static/js/main.567e3a24.js.map"
+    "main.e2d36d14.js.map": "./static/js/main.e2d36d14.js.map"
   },
   "entrypoints": [
     "static/css/main.e897c7bb.css",
-    "static/js/main.567e3a24.js"
+    "static/js/main.e2d36d14.js"
   ]
 }
