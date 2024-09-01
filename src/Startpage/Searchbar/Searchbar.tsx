@@ -6,6 +6,7 @@ import ecosia from "../../data/pictures/ecosia.svg";
 import google from "../../data/pictures/google.svg";
 import duckduckgo from "../../data/pictures/duckduckgo.svg";
 import qwant from "../../data/pictures/qwant.svg";
+import perplexity from "../../data/pictures/perplexity.svg";
 
 const StyledSearchbarContainer = styled.div`
     position: absolute;
@@ -53,7 +54,7 @@ export const Searchbar = () => {
     const searchSettings = Settings.Search.getWithFallback();
     const engine: string = searchSettings?.engine || "google.com/";
 
-    let searchSymbol = null;
+    let searchSymbol = perplexity;
     if (engine.startsWith("duckduckgo"))
         searchSymbol = duckduckgo;
     else if (engine.startsWith("qwant"))
@@ -70,7 +71,7 @@ export const Searchbar = () => {
 
     return (
         <StyledSearchbarContainer>
-            {searchSymbol && <SearchIcon src={searchSymbol} />} 
+            <SearchIcon src={searchSymbol} />
             <StyledSearchbar
                 placeholder=""
                 type="input"
