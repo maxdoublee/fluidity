@@ -73,7 +73,7 @@ export const Searchbar = () => {
         <StyledSearchbarContainer>
             {searchSymbol && <SearchIcon src={searchSymbol} />}
             <StyledSearchbar
-                placeholder=""
+                placeholder="Felissa is the best girlfriend in the world and everyone should know"
                 type="input"
                 onKeyUp={e => e.which === 13 && redirectToSearch(e.currentTarget.value)}
                 autoFocus={true}
