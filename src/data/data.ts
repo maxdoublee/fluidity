@@ -67,6 +67,10 @@ export const links: linkGroup[] = [
 				value: "https://app.raindrop.io/my/36380719",
 			},
 			{
+				label: "Server",
+				value: "https://app.raindrop.io/my/47362448",
+			},
+			{
 				label: "Portfolio",
 				value: "https://app.raindrop.io/my/47362448",
 			},
@@ -205,6 +209,11 @@ export const searchSettings: Search = {
 		"phd": "https://app.raindrop.io/my/43781127",
 		"repo": "https://github.com/maxdoublee?tab=repositories",
 		"doordash": "https://www.doordash.com",
+		"og": "https://github.com/PrettyCoffee/fluidity",
+		"startpage": "https://github.com/PrettyCoffee/fluidity",
+		"live demo": "https://prettycoffee.github.io/fluidity/",
+		"portfolio": "https://app.raindrop.io/my/47362448",
+		"server": "https://app.raindrop.io/my/47362448",
 	}
 }
 
