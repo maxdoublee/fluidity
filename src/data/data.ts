@@ -63,16 +63,16 @@ export const links: linkGroup[] = [
 				value: "https://app.raindrop.io/my/36380838",
 			},
 			{
-				label: "Portfolio",
-				value: "https://app.raindrop.io/my/47362448",
+				label: "Life",
+				value: "https://app.raindrop.io/my/36380719",
 			},
 			{
 				label: "Server",
 				value: "https://app.raindrop.io/my/47362448",
 			},
 			{
-				label: "Life",
-				value: "https://app.raindrop.io/my/36380719",
+				label: "Portfolio",
+				value: "https://app.raindrop.io/my/47362448",
 			},
 			{
 				label: "Previous Courses",
