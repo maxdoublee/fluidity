@@ -204,6 +204,7 @@ export const searchSettings: Search = {
 		"gaming news": "https://gamerant.com/gaming/",
 		"phd": "https://app.raindrop.io/my/43781127",
 		"repo": "https://github.com/maxdoublee?tab=repositories",
+		"doordash": "https://www.doordash.com",
 	}
 }
 
