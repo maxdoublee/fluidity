@@ -7,6 +7,7 @@ import google from "../../data/pictures/google.svg";
 import duckduckgo from "../../data/pictures/duckduckgo.svg";
 import qwant from "../../data/pictures/qwant.svg";
 import perplexity from "../../data/pictures/perplexity.svg";
+'import perplexity from "../../data/pictures/perplexity.jpg";'
 
 const StyledSearchbarContainer = styled.div`
     position: absolute;
