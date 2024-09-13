@@ -68,7 +68,7 @@ export const links: linkGroup[] = [
 			},
 			{
 				label: "Server",
-				value: "https://app.raindrop.io/my/47362448",
+				value: "http://www.maxdoublee.com/",
 			},
 			{
 				label: "Portfolio",
@@ -212,7 +212,7 @@ export const searchSettings: Search = {
 		"og": "https://github.com/PrettyCoffee/fluidity",
 		"startpage": "https://github.com/PrettyCoffee/fluidity",
 		"live demo": "https://prettycoffee.github.io/fluidity/",
-		"server": "https://app.raindrop.io/my/47362448",
+		"server": "http://www.maxdoublee.com/",
 		"chat": "https://chatgpt.com",
 		"chatgpt": "https://chatgpt.com",
 		"linkedin": "https://www.linkedin.com/",
