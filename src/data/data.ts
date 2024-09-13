@@ -72,7 +72,7 @@ export const links: linkGroup[] = [
 			},
 			{
 				label: "Portfolio",
-				value: "https://app.raindrop.io/my/47362448",
+				value: "https://portfolio-five-weld-48.vercel.app",
 			},
 			{
 				label: "Previous Courses",
@@ -212,10 +212,11 @@ export const searchSettings: Search = {
 		"og": "https://github.com/PrettyCoffee/fluidity",
 		"startpage": "https://github.com/PrettyCoffee/fluidity",
 		"live demo": "https://prettycoffee.github.io/fluidity/",
-		"portfolio": "https://app.raindrop.io/my/47362448",
 		"server": "https://app.raindrop.io/my/47362448",
 		"chat": "https://chatgpt.com",
 		"chatgpt": "https://chatgpt.com",
+		"linkedin": "https://www.linkedin.com/",
+		"portfolio": "https://portfolio-five-weld-48.vercel.app",
 	}
 }
 
