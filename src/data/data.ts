@@ -46,8 +46,8 @@ export const links: linkGroup[] = [
 				value: "https://app.raindrop.io/my/27202983",
 			},
 			{
-				label: "School Resources",
-				value: "https://app.raindrop.io/my/24605174",
+				label: "ChatGPT",
+				value: "https://chatgpt.com",
 			},
 		]
 	},
@@ -218,6 +218,7 @@ export const searchSettings: Search = {
 		"linkedin": "https://www.linkedin.com/",
 		"portfolio": "https://portfolio-five-weld-48.vercel.app",
 		"dayone": "https://dayone.me",
+		"c": "https://chatgpt.com",
 	}
 }
 
