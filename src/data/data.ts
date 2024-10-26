@@ -306,5 +306,15 @@ export const themes: Theme[] = [
 			"--accent-color": "#52AEAE",
 			"--accent-color2": "#060D56",
 		},
+	},
+	{
+		name: "CHROMAKOPIA",
+		image: "https://pbs.twimg.com/media/GaGi6RrWUAAhuY8?format=jpg&name=small",
+		colors: {
+			"--bg-color": "#00843D",
+			"--default-color": "#F3BB56",
+			"--accent-color": "#D2D0B6",
+			"--accent-color2": "#000000",
+		},
 	}
 ]
