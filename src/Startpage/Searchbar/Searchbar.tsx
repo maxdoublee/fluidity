@@ -73,7 +73,7 @@ export const Searchbar = () => {
         <StyledSearchbarContainer>
             {searchSymbol && <SearchIcon src={searchSymbol} />}
             <StyledSearchbar
-                placeholder="Left shoulder, right shoulder, left shoulder, look (Don't it feel so good?) Left shoulder, right shoulder, left shoulder, look (So good) Left shoulder, right shoulder, left shoulder, look"
+                placeholder="Someone's keeping watch, I feel them on my shoulder | Ooh, ah (Runnin', runnin', runnin', runnin' 'round)"
                 type="input"
                 onKeyUp={e => e.which === 13 && redirectToSearch(e.currentTarget.value)}
                 autoFocus={true}
