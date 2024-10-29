@@ -63,8 +63,8 @@ export const links: linkGroup[] = [
 				value: "https://app.raindrop.io/my/36380838",
 			},
 			{
-				label: "Life",
-				value: "https://app.raindrop.io/my/36380719",
+				label: "Server",
+				value: "http://52.6.69.170:8080/files/",
 			},
 			{
 				label: "Day One",
