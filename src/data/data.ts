@@ -238,6 +238,16 @@ export type Theme = {
 
 export const themes: Theme[] = [
 	{
+		name: "CHROMAKOPIA",
+		image: "https://pbs.twimg.com/media/GaGi6RrWUAAhuY8?format=jpg&name=small",
+		colors: {
+			"--bg-color": "#00843D",
+			"--default-color": "#D2D0B6",
+			"--accent-color": "#000000",
+			"--accent-color2": "#F3BB56",
+		},
+	},
+	{
 		name: "DOOM",
 		image: "https://f4.bcbits.com/img/a2625942251_65",
 		colors: {
@@ -305,16 +315,6 @@ export const themes: Theme[] = [
 			"--default-color": "#FFFFFF",
 			"--accent-color": "#52AEAE",
 			"--accent-color2": "#060D56",
-		},
-	},
-	{
-		name: "CHROMAKOPIA",
-		image: "https://pbs.twimg.com/media/GaGi6RrWUAAhuY8?format=jpg&name=small",
-		colors: {
-			"--bg-color": "#00843D",
-			"--default-color": "#D2D0B6",
-			"--accent-color": "#000000",
-			"--accent-color2": "#F3BB56",
 		},
 	}
 ]
