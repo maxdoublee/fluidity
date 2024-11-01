@@ -116,7 +116,7 @@ export const searchEngines: dataElem[] = [
 	},
 	{
 		label: "Perplexity",
-		value: "perplexity.ai/",
+		value: "https://chatgpt.com",
 	},
 ];
 
