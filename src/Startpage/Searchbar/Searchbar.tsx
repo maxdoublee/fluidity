@@ -73,7 +73,7 @@ export const Searchbar = () => {
         <StyledSearchbarContainer>
             {searchSymbol && <SearchIcon src={searchSymbol} />}
             <StyledSearchbar
-                placeholder="Someone's keeping watch, I feel them on my shoulder / Ooh, ah (Runnin', runnin', runnin', runnin' 'round)"
+                placeholder={searchSettings.placeholder || "Default placeholder text"} // Use custom placeholder
                 type="input"
                 onKeyUp={e => e.which === 13 && redirectToSearch(e.currentTarget.value)}
                 autoFocus={true}

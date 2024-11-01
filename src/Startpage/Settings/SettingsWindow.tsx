@@ -8,6 +8,7 @@ import { IconButton } from "../../components/IconButton";
 import { LinkSettings } from "./LinkSettings/LinkSettings";
 import { SearchSettings } from "./SearchSettings/SearchSettings";
 import { DesignSettings } from "./DesignSettings/DesignSettings";
+import { SearchTextSettings } from "./SearchTextSettings"; 
 import { Changelog } from "./Changelog/Changelog";
 
 const StyledSettingsWindow = styled.div`
@@ -122,6 +123,7 @@ const TabOptions = [
     "Links",
     "Appearance",
     "Searchbar",
+    "Search Text",
     "Changelog",
 ];
 
@@ -182,6 +184,12 @@ export const SettingsWindow = ({ hidePopup }: props) => {
 
                 {currentTab === "Searchbar" &&
                     <SearchSettings
+                        searchSettings={searchSettings}
+                        setSearchSettings={setSearchSettings}
+                    />}
+
+                {currentTab === "Search Text" &&
+                    <SearchTextSettings
                         searchSettings={searchSettings}
                         setSearchSettings={setSearchSettings}
                     />}

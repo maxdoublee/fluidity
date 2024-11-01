@@ -127,6 +127,7 @@ export type FastForwards = {
 export type Search = {
 	engine: string,
 	fastForward: FastForwards,
+	placeholder?: string;
 }
 
 export const searchSettings: Search = {
@@ -219,8 +220,9 @@ export const searchSettings: Search = {
 		"portfolio": "https://portfolio-five-weld-48.vercel.app",
 		"dayone": "https://dayone.me",
 		"c": "https://chatgpt.com",
-	}
-}
+	},
+	placeholder: "Enter your search here" // Set default placeholder text here
+};
 
 export type colorsType = {
 	[key: string]: string
