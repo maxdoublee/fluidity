@@ -10,7 +10,7 @@ const StyledContainer = styled.div`
 `;
 
 const StyledInput = styled.input`
-    width: 100%; 
+    width: 95%; 
     padding: 10px;
     font-size: 1rem;
     color: var(--default-color);
@@ -36,7 +36,7 @@ export const SearchTextSettings = ({ searchSettings, setSearchSettings }) => {
                 type="text"
                 value={placeholder}
                 onChange={handlePlaceholderChange}
-                placeholder="Enter custom search text..."
+                placeholder=""
             />
         </StyledContainer>
     );
