@@ -221,7 +221,7 @@ export const searchSettings: Search = {
 		"dayone": "https://dayone.me",
 		"c": "https://chatgpt.com",
 	},
-	placeholder: "Enter your search here" // Set default placeholder text here
+	placeholder: "" // Set default placeholder text here
 };
 
 export type colorsType = {
