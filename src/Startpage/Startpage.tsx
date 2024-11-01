@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import styled from "@emotion/styled";
 import { Design as DesignSettings } from "./Settings/settingsHandler";
 
-import { LinkContainer } from "./LinkContainer/LinkContainer"
+import { LinkContainer } from "./LinkContainer/LinkContainer";
 import { Searchbar } from "./Searchbar/Searchbar";
 import { Settings } from "./Settings/Settings";
 
-import { images } from "../data/data"
+import { images } from "../data/data";
 
 const Wrapper = styled.div`
     max-width:1920px;
@@ -36,6 +36,9 @@ const Image = styled.img`
 
 export const Startpage = () => {
     const [img, setImg] = useState(DesignSettings.getWithFallback().image);
+    
+    // Get the theme settings
+    const currentTheme = DesignSettings.getWithFallback();
 
     return (
         <Wrapper>
@@ -45,7 +48,10 @@ export const Startpage = () => {
                 </div>
                 <LinkContainer />
             </StyledStartpage>
-            <Searchbar />
+
+            {/* Pass the theme to Searchbar */}
+            <Searchbar theme={currentTheme} />
+
             <Settings />
         </Wrapper>
     );

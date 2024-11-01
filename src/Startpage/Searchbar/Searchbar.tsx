@@ -2,11 +2,19 @@ import React from 'react';
 import styled from "@emotion/styled";
 import * as Settings from "../Settings/settingsHandler";
 
+// Import the icons as before
 import ecosia from "../../data/pictures/ecosia.svg";
 import google from "../../data/pictures/google.svg";
 import duckduckgo from "../../data/pictures/duckduckgo.svg";
 import qwant from "../../data/pictures/qwant.svg";
 import perplexity from "../../data/pictures/perplexity.svg";
+
+// Define the types for the component props
+interface SearchbarProps {
+    theme: {
+        searchPlaceholder?: string;
+    };
+}
 
 const StyledSearchbarContainer = styled.div`
     position: absolute;
@@ -17,22 +25,22 @@ const StyledSearchbarContainer = styled.div`
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    `;
+`;
+
 const StyledSearchbar = styled.input`
     width: 100%;
     font-size: 30pt;
-    
     background-color: rgba(0,0,0,0);
     color: var(--default-color);
     transition: .3s;
     border: none;
     border-bottom: 2px solid var(--default-color);
     opacity: 0.3;
-    
+
     ::placeholder {
         color: var(--default-color);
     }
-    
+
     :hover, :focus {
         opacity: 1;
         outline: none;
@@ -43,16 +51,15 @@ const SearchIcon = styled.div<{ src: string }>`
     height: 2.9rem;
     width: 3.1rem;
     margin: auto 10px auto 0;
-
     background: var(--default-color);
-    
     mask-size: cover;
     mask-image: url(${({ src }) => src});
 `;
 
-export const Searchbar = () => {
+export const Searchbar: React.FC<SearchbarProps> = ({ theme }) => {
     const searchSettings = Settings.Search.getWithFallback();
     const engine: string = searchSettings?.engine || "google.com/";
+    const placeholderText = theme.searchPlaceholder || "Default placeholder...";
 
     let searchSymbol = null;
     if (engine.startsWith("duckduckgo"))
@@ -73,7 +80,7 @@ export const Searchbar = () => {
         <StyledSearchbarContainer>
             {searchSymbol && <SearchIcon src={searchSymbol} />}
             <StyledSearchbar
-                placeholder={searchSettings.placeholder || "Placeholder Text, go to settings (top right) -> 'Search Text' tab"} 
+                placeholder={placeholderText}
                 type="input"
                 onKeyUp={e => e.which === 13 && redirectToSearch(e.currentTarget.value)}
                 autoFocus={true}

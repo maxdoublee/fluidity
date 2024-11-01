@@ -236,6 +236,7 @@ export type Theme = {
 	name: string;
 	colors: colorsType;
 	image: string;
+	searchPlaceholder?: string;
 }
 
 export const themes: Theme[] = [
@@ -248,6 +249,7 @@ export const themes: Theme[] = [
 			"--accent-color": "#9A413D",
 			"--accent-color2": "#CECCD7",
 		},
+		searchPlaceholder: "Search DOOM style..."
 	},
 	{
 		name: "CHROMAKOPIA",
@@ -258,6 +260,7 @@ export const themes: Theme[] = [
 			"--accent-color": "#000000",
 			"--accent-color2": "#F3BB56",
 		},
+		searchPlaceholder: "Search DOOM style..."
 	},
 	{
 		name: "Pinball",
