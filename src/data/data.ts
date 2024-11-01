@@ -260,7 +260,7 @@ export const themes: Theme[] = [
 			"--accent-color": "#000000",
 			"--accent-color2": "#F3BB56",
 		},
-		searchPlaceholder: "Search DOOM style..."
+		searchPlaceholder: "Search CHANGE style..."
 	},
 	{
 		name: "Pinball",
