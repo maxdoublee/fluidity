@@ -10,7 +10,7 @@ const StyledContainer = styled.div`
 `;
 
 const StyledInput = styled.input`
-    width: 65%; 
+    width: 55%; 
     padding: 10px;
     font-size: 1rem;
     color: var(--default-color);
