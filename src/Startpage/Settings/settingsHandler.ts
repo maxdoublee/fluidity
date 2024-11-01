@@ -15,10 +15,10 @@ export const Search = {
     },
     getWithFallback: () => {
         try {
-            return Search.get() || { ...searchSettings, placeholder: "Default placeholder text" };
+            return Search.get() || searchSettings;
         } catch {
             console.error("Your currently applied search settings appear to be corrupted.");
-            return { ...searchSettings, placeholder: "Default placeholder text" };
+            return searchSettings;
         }
     },
 

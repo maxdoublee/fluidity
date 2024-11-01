@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import * as Settings from '../Settings/settingsHandler';
 
 const StyledInput = styled.input`
     width: 100%;
@@ -16,7 +17,9 @@ export const SearchTextSettings = ({ searchSettings, setSearchSettings }) => {
     const handlePlaceholderChange = (e) => {
         const newPlaceholder = e.target.value;
         setPlaceholder(newPlaceholder);
-        setSearchSettings({ ...searchSettings, placeholder: newPlaceholder });
+        const updatedSettings = { ...searchSettings, placeholder: newPlaceholder };
+        setSearchSettings(updatedSettings); // Update state
+        Settings.Search.set(updatedSettings); // Save to localStorage
     };
 
     return (
