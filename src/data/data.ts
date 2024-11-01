@@ -249,7 +249,7 @@ export const themes: Theme[] = [
 			"--accent-color": "#9A413D",
 			"--accent-color2": "#CECCD7",
 		},
-		searchPlaceholder: "Search DOOM style..."
+		searchPlaceholder: "Beef rap, could lead to getting teeth capped / Or even a wreath for mom dukes on some grief crap"
 	},
 	{
 		name: "CHROMAKOPIA",
@@ -260,17 +260,7 @@ export const themes: Theme[] = [
 			"--accent-color": "#000000",
 			"--accent-color2": "#F3BB56",
 		},
-		searchPlaceholder: "Search CHANGE style..."
-	},
-	{
-		name: "Pinball",
-		image: "https://media.pitchfork.com/photos/65e8e14d086a529f07f1fd76/master/pass/MIKE-Tony-Seltzer-Pinball.jpg",
-		colors: {
-			"--bg-color": "#FFFFFF",
-			"--default-color": "#000000",
-			"--accent-color": "#404040",
-			"--accent-color2": "#BFBFBF",
-		},
+		searchPlaceholder: "Someone's keeping watch, I feel them on my shoulder / Ooh, ah (Runnin', runnin', runnin',"
 	},
 	{
 		name: "Burning Desire",
@@ -281,16 +271,7 @@ export const themes: Theme[] = [
 			"--accent-color": "#FF8C00",
 			"--accent-color2": "#000000",
 		},
-	},
-	{
-		name: "Disco",
-		image: "https://media.pitchfork.com/photos/60d1efd81302105f8cad0e34/1:1/w_1500,h_1500,c_limit/MIKE:%20Disco!.jpeg",
-		colors: {
-			"--bg-color": "#505054",
-			"--default-color": "#FFFFFF",
-			"--accent-color": "#BEC469",
-			"--accent-color2": "#0D3876",
-		},
+		searchPlaceholder: "My mama told me 'bout this curse, how I was not above it /I honor her with every word, I never swap the subject,"
 	},
 	{
 		name: "EYES",
@@ -301,6 +282,7 @@ export const themes: Theme[] = [
 			"--accent-color": "#D63437",
 			"--accent-color2": "#296643",
 		},
+		searchPlaceholder: "Cheat Codes"
 	},
 	{
 		name: "Shake",
@@ -311,6 +293,7 @@ export const themes: Theme[] = [
 			"--accent-color": "#B09982",
 			"--accent-color2": "#664733",
 		},
+		searchPlaceholder: "Despite the things you say to me / You don't mean it either, babe / We'll go down in history, yeah"
 	},
 	{
 		name: "Walkin",
@@ -321,5 +304,6 @@ export const themes: Theme[] = [
 			"--accent-color": "#52AEAE",
 			"--accent-color2": "#060D56",
 		},
+		searchPlaceholder: "Clear a path as I keep on walkin', ain't no stoppin' / In this dirty, filthy, rotten, nasty little world we call our home"
 	}
 ]
