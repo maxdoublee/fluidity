@@ -2,8 +2,15 @@ import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import * as Settings from '../Settings/settingsHandler';
 
-const StyledInput = styled.input`
+const StyledContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 10px; // Adds space between label and input box
     width: 100%;
+`;
+
+const StyledInput = styled.input`
+    width: 80%; // Adjust width to show more text
     padding: 10px;
     font-size: 1rem;
     color: var(--default-color);
@@ -23,7 +30,7 @@ export const SearchTextSettings = ({ searchSettings, setSearchSettings }) => {
     };
 
     return (
-        <div>
+        <StyledContainer>
             <label>Search Placeholder Text</label>
             <StyledInput
                 type="text"
@@ -31,6 +38,6 @@ export const SearchTextSettings = ({ searchSettings, setSearchSettings }) => {
                 onChange={handlePlaceholderChange}
                 placeholder="Enter custom search text..."
             />
-        </div>
+        </StyledContainer>
     );
 };
