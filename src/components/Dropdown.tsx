@@ -34,12 +34,13 @@ const DropdownButton = styled(IconButton)`
 
 const DropdownPopup = styled.div<{ height: number, items: number }>`
     height: ${({ height }) => height + "px"};
+    max-height: 240px; // Display a maximum of six items
     position: absolute;
     left: 4px;
     top: 40px;
     width: calc(100% - 3px);
     background-color: var(--bg-color);
-    overflow: hidden;
+    overflow-y: auto; // Enable vertical scrolling
     z-index: 9;
     animation: box-flicker 0.01s ease 0s infinite alternate;
     transition: ${({ items }) => items * 0.1 + "s"};
@@ -84,14 +85,12 @@ export const Dropdown = ({ items, onChange, value }: props) => {
     }
 
     return (
-        <DropdownWrapper
-        >
+        <DropdownWrapper>
             <DropdownButton
                 text={getCurrentLabel()}
                 icon={faAngleDown}
                 onClick={() => setHasBlur(!hasBlur)}
-            >
-            </DropdownButton>
+            />
             <DropdownPopup height={hasBlur ? popupHeight : 0} items={items.length}>
                 <div
                     onBlur={() => setHasBlur(false)}
