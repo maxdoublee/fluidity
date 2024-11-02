@@ -50,7 +50,7 @@ const StyledSearchbar = styled.input<{ scrollDistance: number }>`
 
     ::placeholder {
         color: var(--default-color);
-        animation: ${({ scrollDistance }) => scrollPlaceholder(scrollDistance)} 10s ease-in-out infinite;
+        animation: ${({ scrollDistance }) => scrollPlaceholder(scrollDistance)} 20s ease-in-out infinite; /* Increased duration from 10s to 20s */
     }
 
     :hover, :focus {
