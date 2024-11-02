@@ -2,18 +2,6 @@ import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import * as Settings from '../Settings/settingsHandler';
 
-// Define keyframes for scrolling effect
-const placeholderScroll = `
-  @keyframes scroll {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-`;
-
 const StyledContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -28,17 +16,6 @@ const StyledInput = styled.input`
     color: var(--default-color);
     background-color: var(--bg-color);
     border: 1px solid var(--default-color);
-    overflow: hidden; /* Ensures text doesn’t overflow outside */
-
-    /* Apply animation to placeholder text */
-    &::placeholder {
-        display: inline-block;
-        animation: scroll 15s linear infinite; /* Adjust speed */
-        white-space: nowrap;
-    }
-
-    /* Insert keyframes directly into component */
-    ${placeholderScroll}
 `;
 
 export const SearchTextSettings = ({ searchSettings, setSearchSettings }) => {
