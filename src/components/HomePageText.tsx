@@ -12,18 +12,24 @@ const ScrollingTextContainer = styled.div`
   overflow: hidden;
   white-space: nowrap;
   position: relative;
+  margin: 0;
+  padding: 0;
 `;
 
 const ScrollingText = styled.span`
   display: inline-block;
-  animation: ${scroll} 20s linear infinite;
+  animation: ${scroll} 40s linear infinite;
   white-space: nowrap;
 `;
 
-export const HomePageText = () => {
+interface HomePageTextProps {
+  text: string; // Explicitly define the type as 'string'
+}
+
+export const HomePageText: React.FC<HomePageTextProps> = ({ text }) => {
   return (
     <ScrollingTextContainer>
-      <ScrollingText>Someone's keeping watch, I feel them on my shoulder... running...</ScrollingText>
+      <ScrollingText>{text}</ScrollingText>
     </ScrollingTextContainer>
   );
 };
