@@ -39,7 +39,8 @@ const DropdownItem = styled(IconButton)`
     justify-content: flex-start;
     font-size: initial;
     color: var(--default-color); /* Ensure consistent color */
-
+    font-weight: 500; /* Set a specific font weight */
+    
     :enabled:hover {
         animation: none; /* Remove any animation on hover */
         opacity: 1;
@@ -47,10 +48,11 @@ const DropdownItem = styled(IconButton)`
         color: var(--bg-color);
     }
 
-    /* Remove any additional styling that could cause a blurred effect */
+    /* Apply font smoothing settings */
     text-shadow: none; 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: none; /* Remove transition to prevent movement */
 `;
 
 const DropdownPopup = styled.div<{ height: number, items: number }>`
