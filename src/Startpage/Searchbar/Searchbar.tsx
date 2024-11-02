@@ -59,7 +59,7 @@ const SearchIcon = styled.div<{ src: string }>`
 export const Searchbar: React.FC<SearchbarProps> = ({ theme }) => {
     const searchSettings = Settings.Search.getWithFallback();
     const engine: string = searchSettings?.engine || "google.com/";
-    const placeholderText = theme.searchPlaceholder || "Default placeholder...";
+    const placeholderText = Settings.Search.getWithFallback().placeholder || theme.searchPlaceholder || "Default placeholder...";
 
     let searchSymbol = null;
     if (engine.startsWith("duckduckgo"))

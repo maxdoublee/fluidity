@@ -27,7 +27,7 @@ export const SearchTextSettings = ({ searchSettings, setSearchSettings }) => {
         const updatedSettings = { ...searchSettings, placeholder: newPlaceholder };
         setSearchSettings(updatedSettings); // Update state
         Settings.Search.set(updatedSettings); // Save to localStorage
-    };
+    };    
 
     return (
         <StyledContainer>
