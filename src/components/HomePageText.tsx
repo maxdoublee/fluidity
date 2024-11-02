@@ -9,7 +9,7 @@ const scroll = keyframes`
 
 const ScrollingTextContainer = styled.div`
   width: 100%;
-  overflow: hidden;
+  overflow: hidden; /* Ensure content does not cause overflow */
   white-space: nowrap;
   position: relative;
   margin: 0;
@@ -18,12 +18,12 @@ const ScrollingTextContainer = styled.div`
 
 const ScrollingText = styled.span`
   display: inline-block;
-  animation: ${scroll} 40s linear infinite;
+  animation: ${scroll} 80s linear infinite; /* Increase duration for slower scrolling */
   white-space: nowrap;
 `;
 
 interface HomePageTextProps {
-  text: string; // Explicitly define the type as 'string'
+  text: string;
 }
 
 export const HomePageText: React.FC<HomePageTextProps> = ({ text }) => {
