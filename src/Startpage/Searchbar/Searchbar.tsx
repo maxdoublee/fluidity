@@ -26,19 +26,19 @@ const StyledSearchbarContainer = styled.div`
     justify-content: center;
 `;
 
-const scrollPlaceholder = (scrollDistance: number) => keyframes`
+const scrollText = (scrollDistance: number, duration: number) => keyframes`
     0%, 20% { 
-        text-indent: 0; 
+        transform: translateX(0); 
     }
     50%, 70% { 
-        text-indent: -${scrollDistance}px; 
+        transform: translateX(-${scrollDistance}px); 
     }
     90%, 100% { 
-        text-indent: 0; 
+        transform: translateX(0); 
     }
 `;
 
-const StyledSearchbar = styled.input<{ scrollDistance: number }>`
+const StyledSearchbar = styled.input`
     width: 100%;
     font-size: 30pt;
     background-color: rgba(0,0,0,0);
@@ -47,16 +47,21 @@ const StyledSearchbar = styled.input<{ scrollDistance: number }>`
     border: none;
     border-bottom: 2px solid var(--default-color);
     opacity: 0.3;
-
-    ::placeholder {
-        color: var(--default-color);
-        animation: ${({ scrollDistance }) => scrollPlaceholder(scrollDistance)} 20s ease-in-out infinite; /* Increased duration from 10s to 20s */
-    }
-
+    
     :hover, :focus {
         opacity: 1;
         outline: none;
     }
+`;
+
+const ScrollingPlaceholder = styled.span<{ scrollDistance: number, duration: number }>`
+    position: absolute;
+    color: var(--default-color);
+    font-size: 30pt;
+    pointer-events: none;
+    white-space: nowrap;
+    opacity: 0.3;
+    animation: ${({ scrollDistance, duration }) => scrollText(scrollDistance, duration)} ${props => props.duration}s linear infinite;
 `;
 
 const SearchIcon = styled.div<{ src: string }>`
@@ -71,9 +76,10 @@ const SearchIcon = styled.div<{ src: string }>`
 export const Searchbar: React.FC<SearchbarProps> = ({ theme }) => {
     const searchSettings = Settings.Search.getWithFallback();
     const engine: string = searchSettings?.engine || "google.com/";
-    const placeholderText = Settings.Search.getWithFallback().placeholder || theme.searchPlaceholder || "Default placeholder...";
+    const placeholderText = searchSettings.placeholder || theme.searchPlaceholder || "Default placeholder...";
 
     const [scrollDistance, setScrollDistance] = useState(0);
+    const [duration, setDuration] = useState(0);
     const placeholderRef = useRef<HTMLSpanElement>(null);
     const searchbarRef = useRef<HTMLInputElement>(null);
 
@@ -81,7 +87,13 @@ export const Searchbar: React.FC<SearchbarProps> = ({ theme }) => {
         if (placeholderRef.current && searchbarRef.current) {
             const placeholderWidth = placeholderRef.current.offsetWidth;
             const searchbarWidth = searchbarRef.current.offsetWidth;
-            setScrollDistance(Math.max(0, placeholderWidth - searchbarWidth));
+
+            // Calculate distance and duration based on text length
+            const calculatedScrollDistance = Math.max(0, placeholderWidth - searchbarWidth);
+            const calculatedDuration = Math.max(10, (calculatedScrollDistance / 50)); // Adjusted for comfortable speed
+
+            setScrollDistance(calculatedScrollDistance);
+            setDuration(calculatedDuration);
         }
     }, [placeholderText]);
 
@@ -104,16 +116,14 @@ export const Searchbar: React.FC<SearchbarProps> = ({ theme }) => {
         <StyledSearchbarContainer>
             {searchSymbol && <SearchIcon src={searchSymbol} />}
             <StyledSearchbar
-                placeholder={placeholderText}
                 type="input"
                 onKeyUp={e => e.which === 13 && redirectToSearch(e.currentTarget.value)}
                 autoFocus={true}
-                scrollDistance={scrollDistance}
                 ref={searchbarRef}
             />
-            <span ref={placeholderRef} style={{ visibility: "hidden", position: "absolute", whiteSpace: "nowrap", fontSize: "30pt" }}>
+            <ScrollingPlaceholder scrollDistance={scrollDistance} duration={duration} ref={placeholderRef}>
                 {placeholderText}
-            </span>
+            </ScrollingPlaceholder>
         </StyledSearchbarContainer>
     );
 };
