@@ -27,12 +27,7 @@ const StyledSearchbarContainer = styled.div`
     justify-content: center;
 `;
 
-const ScrollPlaceholderAnimation = (width: number) => keyframes`
-    0%, 100% { text-indent: 0; } /* Start and end at the same position */
-    50% { text-indent: -${width}px; } /* Shift the text to reveal it */
-`;
-
-const StyledSearchbar = styled.input<{ width: number }>`
+const StyledSearchbar = styled.input<{ scrollDistance: number }>`
     width: 100%;
     font-size: 30pt;
     background-color: rgba(0,0,0,0);
@@ -44,7 +39,7 @@ const StyledSearchbar = styled.input<{ width: number }>`
 
     ::placeholder {
         color: var(--default-color);
-        animation: ${({ width }) => ScrollPlaceholderAnimation(width)} 15s linear infinite;
+        animation: ${({ scrollDistance }) => scrollPlaceholder(scrollDistance)} 10s linear infinite;
     }
 
     :hover, :focus {
@@ -62,17 +57,26 @@ const SearchIcon = styled.div<{ src: string }>`
     mask-image: url(${({ src }) => src});
 `;
 
+// Keyframes function to handle the scroll animation
+const scrollPlaceholder = (scrollDistance: number) => keyframes`
+    0%, 100% { text-indent: 0; }
+    50% { text-indent: -${scrollDistance}px; }
+`;
+
 export const Searchbar: React.FC<SearchbarProps> = ({ theme }) => {
     const searchSettings = Settings.Search.getWithFallback();
     const engine: string = searchSettings?.engine || "google.com/";
     const placeholderText = Settings.Search.getWithFallback().placeholder || theme.searchPlaceholder || "Default placeholder...";
 
-    const [placeholderWidth, setPlaceholderWidth] = useState(0);
-    const hiddenTextRef = useRef<HTMLSpanElement>(null);
+    const [scrollDistance, setScrollDistance] = useState(0);
+    const placeholderRef = useRef<HTMLSpanElement>(null);
+    const searchbarRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
-        if (hiddenTextRef.current) {
-            setPlaceholderWidth(hiddenTextRef.current.offsetWidth);
+        if (placeholderRef.current && searchbarRef.current) {
+            const placeholderWidth = placeholderRef.current.offsetWidth;
+            const searchbarWidth = searchbarRef.current.offsetWidth;
+            setScrollDistance(Math.max(0, placeholderWidth - searchbarWidth));
         }
     }, [placeholderText]);
 
@@ -96,13 +100,14 @@ export const Searchbar: React.FC<SearchbarProps> = ({ theme }) => {
             {searchSymbol && <SearchIcon src={searchSymbol} />}
             <StyledSearchbar
                 placeholder={placeholderText}
-                width={placeholderWidth}
                 type="input"
                 onKeyUp={e => e.which === 13 && redirectToSearch(e.currentTarget.value)}
                 autoFocus={true}
+                scrollDistance={scrollDistance}
+                ref={searchbarRef}
             />
-            {/* Hidden span to measure the placeholder text width */}
-            <span ref={hiddenTextRef} style={{ visibility: "hidden", position: "absolute", whiteSpace: "nowrap", fontSize: "30pt" }}>
+            {/* Hidden span to measure placeholder text width */}
+            <span ref={placeholderRef} style={{ visibility: "hidden", position: "absolute", whiteSpace: "nowrap", fontSize: "30pt" }}>
                 {placeholderText}
             </span>
         </StyledSearchbarContainer>
