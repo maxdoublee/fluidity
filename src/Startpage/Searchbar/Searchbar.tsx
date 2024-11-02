@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
 import * as Settings from "../Settings/settingsHandler";
@@ -10,18 +10,6 @@ import duckduckgo from "../../data/pictures/duckduckgo.svg";
 import qwant from "../../data/pictures/qwant.svg";
 import perplexity from "../../data/pictures/perplexity.svg";
 
-// Define the scrolling keyframe animations
-const scrollPlaceholder = keyframes`
-    0%, 100% { text-indent: 0; }
-    50% { text-indent: -100%; }
-`;
-
-const pauseScroll = keyframes`
-    0%, 30%, 100% { text-indent: 0; }
-    70% { text-indent: -100%; }
-`;
-
-// Define the types for the component props
 interface SearchbarProps {
     theme: {
         searchPlaceholder?: string;
@@ -39,10 +27,15 @@ const StyledSearchbarContainer = styled.div`
     justify-content: center;
 `;
 
-const StyledSearchbar = styled.input`
+const ScrollPlaceholderAnimation = (width: number) => keyframes`
+    0%, 100% { text-indent: 0; } /* Start and end at the same position */
+    50% { text-indent: -${width}px; } /* Shift the text to reveal it */
+`;
+
+const StyledSearchbar = styled.input<{ width: number }>`
     width: 100%;
     font-size: 30pt;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0,0,0,0);
     color: var(--default-color);
     transition: .3s;
     border: none;
@@ -51,7 +44,7 @@ const StyledSearchbar = styled.input`
 
     ::placeholder {
         color: var(--default-color);
-        animation: ${scrollPlaceholder} 15s linear infinite;
+        animation: ${({ width }) => ScrollPlaceholderAnimation(width)} 15s linear infinite;
     }
 
     :hover, :focus {
@@ -74,6 +67,15 @@ export const Searchbar: React.FC<SearchbarProps> = ({ theme }) => {
     const engine: string = searchSettings?.engine || "google.com/";
     const placeholderText = Settings.Search.getWithFallback().placeholder || theme.searchPlaceholder || "Default placeholder...";
 
+    const [placeholderWidth, setPlaceholderWidth] = useState(0);
+    const hiddenTextRef = useRef<HTMLSpanElement>(null);
+
+    useEffect(() => {
+        if (hiddenTextRef.current) {
+            setPlaceholderWidth(hiddenTextRef.current.offsetWidth);
+        }
+    }, [placeholderText]);
+
     let searchSymbol = null;
     if (engine.startsWith("duckduckgo"))
         searchSymbol = duckduckgo;
@@ -94,10 +96,15 @@ export const Searchbar: React.FC<SearchbarProps> = ({ theme }) => {
             {searchSymbol && <SearchIcon src={searchSymbol} />}
             <StyledSearchbar
                 placeholder={placeholderText}
+                width={placeholderWidth}
                 type="input"
                 onKeyUp={e => e.which === 13 && redirectToSearch(e.currentTarget.value)}
                 autoFocus={true}
             />
+            {/* Hidden span to measure the placeholder text width */}
+            <span ref={hiddenTextRef} style={{ visibility: "hidden", position: "absolute", whiteSpace: "nowrap", fontSize: "30pt" }}>
+                {placeholderText}
+            </span>
         </StyledSearchbarContainer>
     );
-}
+};
