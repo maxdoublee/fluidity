@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "@emotion/styled";
+import { keyframes } from "@emotion/react";
 import * as Settings from "../Settings/settingsHandler";
 
 // Import the icons as before
@@ -8,6 +9,17 @@ import google from "../../data/pictures/google.svg";
 import duckduckgo from "../../data/pictures/duckduckgo.svg";
 import qwant from "../../data/pictures/qwant.svg";
 import perplexity from "../../data/pictures/perplexity.svg";
+
+// Define the scrolling keyframe animations
+const scrollPlaceholder = keyframes`
+    0%, 100% { text-indent: 0; }
+    50% { text-indent: -100%; }
+`;
+
+const pauseScroll = keyframes`
+    0%, 30%, 100% { text-indent: 0; }
+    70% { text-indent: -100%; }
+`;
 
 // Define the types for the component props
 interface SearchbarProps {
@@ -21,7 +33,7 @@ const StyledSearchbarContainer = styled.div`
     left: calc(100px - 2.9rem - 10px);
     right: 100px;
     bottom: 40px;
-    height:min-content;
+    height: min-content;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -30,7 +42,7 @@ const StyledSearchbarContainer = styled.div`
 const StyledSearchbar = styled.input`
     width: 100%;
     font-size: 30pt;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     color: var(--default-color);
     transition: .3s;
     border: none;
@@ -39,6 +51,7 @@ const StyledSearchbar = styled.input`
 
     ::placeholder {
         color: var(--default-color);
+        animation: ${scrollPlaceholder} 15s linear infinite;
     }
 
     :hover, :focus {
