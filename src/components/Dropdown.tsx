@@ -20,27 +20,48 @@ const DropdownButton = styled(IconButton)`
     flex-direction: row;
     align-items: space-between;
     justify-content: space-between;
-    padding:10px 20px;
+    padding: 10px 20px;
     border: 2px solid var(--default-color);
     background-color: var(--bg-color);
 
     :enabled:hover, :focus, :hover {
-        animation:none;
+        animation: none;
         opacity: 1;
     }
 	font-size: initial;
     z-index: 10;
 `;
 
+// Update DropdownItem here:
+const DropdownItem = styled(IconButton)`
+    margin: 0;
+    padding: 10px 20px;
+    justify-content: flex-start;
+    font-size: initial;
+    color: var(--default-color); /* Ensure consistent color */
+
+    :enabled:hover {
+        animation: none; /* Remove any animation on hover */
+        opacity: 1;
+        background-color: var(--default-color);
+        color: var(--bg-color);
+    }
+
+    /* Remove any additional styling that could cause a blurred effect */
+    text-shadow: none; 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+`;
+
 const DropdownPopup = styled.div<{ height: number, items: number }>`
     height: ${({ height }) => height + "px"};
-    max-height: 240px; // Display a maximum of six items
+    max-height: 240px; /* Set max height to fit six items */
     position: absolute;
     left: 4px;
     top: 40px;
     width: calc(100% - 3px);
     background-color: var(--bg-color);
-    overflow-y: auto; // Enable vertical scrolling
+    overflow-y: auto; /* Enable scrolling */
     z-index: 9;
     animation: box-flicker 0.01s ease 0s infinite alternate;
     transition: ${({ items }) => items * 0.1 + "s"};
@@ -48,19 +69,6 @@ const DropdownPopup = styled.div<{ height: number, items: number }>`
         padding-top: 5px;
         display: flex;
         flex-direction: column;
-    }
-`;
-
-const DropdownItem = styled(IconButton)`
-    margin: 0;
-    padding: 10px 20px;
-    justify-content: flex-start;
-    font-size: initial;
-    :enabled:hover {
-        animation:none;
-        opacity: 1;
-        background-color: var(--default-color);
-        color: var(--bg-color);
     }
 `;
 
@@ -73,16 +81,16 @@ type props = {
 export const Dropdown = ({ items, onChange, value }: props) => {
     const [popupHeight, setPopupHeight] = useState(0);
     const [hasBlur, setHasBlur] = useState(false);
+
     const getCurrentLabel = () => {
-        const current = items.filter((item) => item.value === value);
-        if (current.length > 0) return current[0].label;
-        else return value;
-    }
+        const current = items.find((item) => item.value === value);
+        return current ? current.label : value;
+    };
 
     const handleChange = (value: string) => {
         onChange(value);
         setHasBlur(false);
-    }
+    };
 
     return (
         <DropdownWrapper>
@@ -96,15 +104,15 @@ export const Dropdown = ({ items, onChange, value }: props) => {
                     onBlur={() => setHasBlur(false)}
                     ref={(elem) => setPopupHeight(elem?.clientHeight || 0)}
                 >
-                    {items.map((item) =>
+                    {items.map((item) => (
                         <DropdownItem
                             onClick={() => handleChange(item.value)}
                             key={item.value}
                             text={item.label}
                         />
-                    )}
+                    ))}
                 </div>
             </DropdownPopup>
         </DropdownWrapper>
-    )
-}
+    );
+};
