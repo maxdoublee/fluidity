@@ -5,7 +5,6 @@ import { Design as DesignSettings } from "./Settings/settingsHandler";
 import { LinkContainer } from "./LinkContainer/LinkContainer";
 import { Searchbar } from "./Searchbar/Searchbar";
 import { Settings } from "./Settings/Settings";
-import { HomePageText } from "../components/HomePageText";
 
 import { images } from "../data/data";
 
