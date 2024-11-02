@@ -1,15 +1,58 @@
 :root {
-	--bg-color: rgba(46,46,46);
-	--default-color: rgba(230,230,230);
-	--accent-color: rgb(255, 180, 230);
-	--accent-color2: rgb(180, 255, 230);
-	--border-radius: 5px;
-	--settings-window-gap: 50px;
-	--text-shadow-downwards: 1px 0px 0 var(--accent-color),
-            -1px 0px 0 var(--accent-color),
-            0px -1px 0 var(--accent-color),
-            0px 1px 0 var(--accent-color),
-            0px 2px 0 var(--accent-color),
-            0px 3px 0 var(--accent-color),
-            0px 4px 0 var(--accent-color);
+    --bg-color: rgba(46, 46, 46);
+    --default-color: rgba(230, 230, 230);
+    --accent-color: rgb(255, 180, 230);
+    --accent-color2: rgb(180, 255, 230);
+    --border-radius: 5px;
+    --settings-window-gap: 50px;
+    --text-shadow-downwards: 1px 0px 0 var(--accent-color),
+        -1px 0px 0 var(--accent-color),
+        0px -1px 0 var(--accent-color),
+        0px 1px 0 var(--accent-color),
+        0px 2px 0 var(--accent-color),
+        0px 3px 0 var(--accent-color),
+        0px 4px 0 var(--accent-color);
+}
+
+/* Font smoothing for better rendering */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Font imports */
+@font-face {
+    font-family: 'Fira Code';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Fira Code'), url('./FiraCode-Light.woff') format('woff');
+}
+@font-face {
+    font-family: 'Fira Code';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Fira Code'), url('./FiraCode-Regular.woff') format('woff');
+}
+body * {
+    font-family: "Fira Code";
+    font-weight: 300;
+}
+
+/* Global default styles */
+html, body, #root {
+    height: 100%;
+    width: 100%;
+}
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--default-color);
+    overflow: auto;
+}
+p {
+    margin: 0;
+}
+a, a:visited, a:active {
+    color: var(--default-color);
+    text-decoration: none;
 }

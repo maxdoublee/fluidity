@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
 import * as Settings from "../Settings/settingsHandler";
 
-// Import the icons as before
 import ecosia from "../../data/pictures/ecosia.svg";
 import google from "../../data/pictures/google.svg";
 import duckduckgo from "../../data/pictures/duckduckgo.svg";
@@ -27,6 +26,18 @@ const StyledSearchbarContainer = styled.div`
     justify-content: center;
 `;
 
+const scrollPlaceholder = (scrollDistance: number) => keyframes`
+    0%, 20% { 
+        text-indent: 0; 
+    }
+    50%, 70% { 
+        text-indent: -${scrollDistance}px; 
+    }
+    90%, 100% { 
+        text-indent: 0; 
+    }
+`;
+
 const StyledSearchbar = styled.input<{ scrollDistance: number }>`
     width: 100%;
     font-size: 30pt;
@@ -39,7 +50,7 @@ const StyledSearchbar = styled.input<{ scrollDistance: number }>`
 
     ::placeholder {
         color: var(--default-color);
-        animation: ${({ scrollDistance }) => scrollPlaceholder(scrollDistance)} 14s linear infinite;
+        animation: ${({ scrollDistance }) => scrollPlaceholder(scrollDistance)} 10s ease-in-out infinite;
     }
 
     :hover, :focus {
@@ -55,13 +66,6 @@ const SearchIcon = styled.div<{ src: string }>`
     background: var(--default-color);
     mask-size: cover;
     mask-image: url(${({ src }) => src});
-`;
-
-// Keyframes function to handle the scroll animation with pauses
-const scrollPlaceholder = (scrollDistance: number) => keyframes`
-    0%, 15% { text-indent: 0; } /* Pause at the beginning */
-    50% { text-indent: -${scrollDistance}px; } /* Scroll to the end */
-    65%, 100% { text-indent: -${scrollDistance}px; } /* Pause at the end */
 `;
 
 export const Searchbar: React.FC<SearchbarProps> = ({ theme }) => {
@@ -107,7 +111,6 @@ export const Searchbar: React.FC<SearchbarProps> = ({ theme }) => {
                 scrollDistance={scrollDistance}
                 ref={searchbarRef}
             />
-            {/* Hidden span to measure placeholder text width */}
             <span ref={placeholderRef} style={{ visibility: "hidden", position: "absolute", whiteSpace: "nowrap", fontSize: "30pt" }}>
                 {placeholderText}
             </span>

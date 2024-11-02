@@ -2,17 +2,11 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 
-// Define keyframes for scrolling animation
 const scroll = keyframes`
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
 `;
 
-// Define styled components
 const ScrollingTextContainer = styled.div`
   width: 100%;
   overflow: hidden;
@@ -26,7 +20,6 @@ const ScrollingText = styled.span`
   white-space: nowrap;
 `;
 
-// Use ScrollingTextContainer directly without declaring it as a type
 export const HomePageText = () => {
   return (
     <ScrollingTextContainer>
