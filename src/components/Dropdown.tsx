@@ -28,19 +28,19 @@ const DropdownButton = styled(IconButton)`
         animation: none;
         opacity: 1;
     }
-	font-size: initial;
+    font-size: initial;
     z-index: 10;
 `;
 
-// Update DropdownItem here:
+// Updated DropdownItem with explicit font settings and no transitions/animations
 const DropdownItem = styled(IconButton)`
     margin: 0;
     padding: 10px 20px;
     justify-content: flex-start;
-    font-size: initial;
-    color: var(--default-color); /* Ensure consistent color */
+    font-size: 16px; /* Set a specific font size */
     font-weight: 500; /* Set a specific font weight */
-    
+    color: var(--default-color); /* Ensure consistent color */
+
     :enabled:hover {
         animation: none; /* Remove any animation on hover */
         opacity: 1;
@@ -48,11 +48,12 @@ const DropdownItem = styled(IconButton)`
         color: var(--bg-color);
     }
 
-    /* Apply font smoothing settings */
+    /* Apply font smoothing and remove transitions */
     text-shadow: none; 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: none; /* Remove transition to prevent movement */
+    animation: none; /* Ensure no animation is applied */
 `;
 
 const DropdownPopup = styled.div<{ height: number, items: number }>`
@@ -65,8 +66,7 @@ const DropdownPopup = styled.div<{ height: number, items: number }>`
     background-color: var(--bg-color);
     overflow-y: auto; /* Enable scrolling */
     z-index: 9;
-    animation: box-flicker 0.01s ease 0s infinite alternate;
-    transition: ${({ items }) => items * 0.1 + "s"};
+    transition: ${({ items }) => items * 0.1 + "s"}; /* Smooth transition for height */
     > div {
         padding-top: 5px;
         display: flex;
