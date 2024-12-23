@@ -118,6 +118,10 @@ export const searchEngines: dataElem[] = [
 		label: "Perplexity",
 		value: "perplexity.ai/",
 	},
+	{
+		label: "ChatGPT",
+		value: "chatgpt.com/search",
+	},
 ];
 
 export type FastForwards = {
